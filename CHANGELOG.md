@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update meta-resin to include avahi [Florin]
 * Update resin-yocto-scripts to include kernel headers handling as gzip [Florin]
 * Add modified aufs patches here because of modified kernel tree which does not accept pristine aufs patches [Florin]
 
