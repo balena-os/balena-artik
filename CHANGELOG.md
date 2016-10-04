@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add modified aufs patches here because of modified kernel tree which does not accept pristine aufs patches [Florin]
+
 # v1.16.1 - 2016-10-01
 
 * Update meta-resin to include supervisor v2.5.0 [Pablo]
