@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update meta-resin to v1.18 [Florin]
+
 # v1.17.0 - 2016-10-22
 
 * Update meta-resin to v1.17 [Michal]
