@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v2.0.0-beta.4 - 2016-11-24
+
 * Update meta-resin to v2.0-beta.4 [Florin]
 
 # v2.0.0-beta.3 - 2016-11-07
