@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add resinhup machine specific support in uboot [Andrei]
 * Update resin-yocto-scripts to HEAD of the master branch [Florin]
 
 # v2.0.0-beta.7 - 2016-12-05
