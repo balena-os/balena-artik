@@ -1,5 +1,10 @@
-# generate custom u-boot env binary data for our SD and eMMC images, for both Artik 5 and Artik 10
+UBOOT_KCONFIG_SUPPORT = "0"
+inherit resin-u-boot
 
+FILESEXTRAPATHS_append := ":${THISDIR}/patches"
+SRC_URI_append = " file://artik-integrate-with-resin-configuration.patch"
+
+# generate custom u-boot env binary data for our SD and eMMC images, for both Artik 5 and Artik 10
 do_compile_append() {
     cp `find . -name "env_common.o"` copy_env_common.o
     ${OBJCOPY} -O binary --only-section=.rodata `find . -name "copy_env_common.o"`
