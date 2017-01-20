@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v1.25.0 - 2017-01-09
+
+* Update meta-resin to v1.25 [Andrei]
+* Add resinhup machine specific support in uboot [Andrei]
 * Update resin-yocto-scripts to HEAD of the 1.X branch [Florin]
 
 # v1.24.0 - 2016-12-05
