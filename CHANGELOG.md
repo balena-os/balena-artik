@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v1.26.0-rc0 - 2017-01-27
+
+* Update meta-resin to v1.26-rc0 [Andrei]
+
 # v1.25.0 - 2017-01-09
 
 * Update meta-resin to v1.25 [Andrei]
