@@ -1,0 +1,143 @@
+From 18cb63c331007108cbd3ff328261930126c34b18 Mon Sep 17 00:00:00 2001
+From: "J. R. Okajima" <hooanon05g@gmail.com>
+Date: Tue, 17 Jan 2017 00:13:23 +0900
+Subject: [PATCH] aufs: support smack_d_instantiate() which calls i_op nestedly
+
+As a part of lookup, smack_d_instantiate() is called, and it calls
+i_op->getxattr(). ouch.
+
+VFS lookup
++ i_op->lookup == aufs_lookup()
+  + d_instantiate()
+    + security_d_instantiate()
+      + smack_d_instantiate()
+        + i_op->getxattr == aufs_getxattr()
+
+Aufs doesn't expect i_op to be called nestedly in a single systemcall.
+But smack causes re-acquiring the same semaphore since every aufs i_op
+acquires the internal semaphore to prohibit the branch manipulation
+during it is working.
+
+Reported-by: Arun Chandran <achandran@mvista.com>
+Signed-off-by: J. R. Okajima <hooanon05g@gmail.com>
+
+Upstream-Status: Backport
+
+Signed-off-by: Florin Sarbu <florin@resin.io>
+
+Index: git/fs/aufs/i_op.c
+===================================================================
+--- git.orig/fs/aufs/i_op.c
++++ git/fs/aufs/i_op.c
+@@ -943,7 +943,8 @@ static void au_refresh_iattr(struct inod
+  * returns zero or negative (an error).
+  * @dentry will be read-locked in success.
+  */
+-int au_h_path_getattr(struct dentry *dentry, int force, struct path *h_path)
++int au_h_path_getattr(struct dentry *dentry, int force, struct path *h_path,
++		      int locked)
+ {
+ 	int err;
+ 	unsigned int mnt_flags, sigen;
+@@ -960,6 +961,9 @@ int au_h_path_getattr(struct dentry *den
+ 	mnt_flags = au_mntflags(sb);
+ 	udba_none = !!au_opt_test(mnt_flags, UDBA_NONE);
+ 
++	if (unlikely(locked))
++		goto body; /* skip locking dinfo */
++
+ 	/* support fstat(2) */
+ 	if (!d_unlinked(dentry) && !udba_none) {
+ 		sigen = au_sigen(sb);
+@@ -987,6 +991,7 @@ int au_h_path_getattr(struct dentry *den
+ 	} else
+ 		di_read_lock_child(dentry, AuLock_IR);
+ 
++body:
+ 	inode = dentry->d_inode;
+ 	bindex = au_ibstart(inode);
+ 	h_path->mnt = au_sbr_mnt(sb, bindex);
+@@ -1025,7 +1030,7 @@ static int aufs_getattr(struct vfsmount
+ 	err = si_read_lock(sb, AuLock_FLUSH | AuLock_NOPLM);
+ 	if (unlikely(err))
+ 		goto out;
+-	err = au_h_path_getattr(dentry, /*force*/0, &h_path);
++	err = au_h_path_getattr(dentry, /*force*/0, &h_path, /*locked*/0);
+ 	if (unlikely(err))
+ 		goto out_si;
+ 	if (unlikely(!h_path.dentry))
+Index: git/fs/aufs/inode.h
+===================================================================
+--- git.orig/fs/aufs/inode.h
++++ git/fs/aufs/inode.h
+@@ -200,7 +200,8 @@ struct au_icpup_args {
+ int au_pin_and_icpup(struct dentry *dentry, struct iattr *ia,
+ 		     struct au_icpup_args *a);
+ 
+-int au_h_path_getattr(struct dentry *dentry, int force, struct path *h_path);
++int au_h_path_getattr(struct dentry *dentry, int force, struct path *h_path,
++		      int locked);
+ 
+ /* i_op_add.c */
+ int au_may_add(struct dentry *dentry, aufs_bindex_t bindex,
+Index: git/fs/aufs/xattr.c
+===================================================================
+--- git.orig/fs/aufs/xattr.c
++++ git/fs/aufs/xattr.c
+@@ -178,6 +178,19 @@ out:
+ 
+ /* ---------------------------------------------------------------------- */
+ 
++static int au_smack_reentering(struct super_block *sb)
++{
++#if IS_ENABLED(CONFIG_SECURITY_SMACK)
++	/*
++	 * as a part of lookup, smack_d_instantiate() is called, and it calls
++	 * i_op->getxattr(). ouch.
++	 */
++	return si_pid_test(sb);
++#else
++	return 0;
++#endif
++}
++
+ enum {
+ 	AU_XATTR_LIST,
+ 	AU_XATTR_GET
+@@ -201,14 +214,18 @@ struct au_lgxattr {
+ static ssize_t au_lgxattr(struct dentry *dentry, struct au_lgxattr *arg)
+ {
+ 	ssize_t err;
++	int reenter;
+ 	struct path h_path;
+ 	struct super_block *sb;
+ 
+ 	sb = dentry->d_sb;
+-	err = si_read_lock(sb, AuLock_FLUSH | AuLock_NOPLM);
+-	if (unlikely(err))
+-		goto out;
+-	err = au_h_path_getattr(dentry, /*force*/1, &h_path);
++	reenter = au_smack_reentering(sb);
++	if (!reenter) {
++		err = si_read_lock(sb, AuLock_FLUSH | AuLock_NOPLM);
++		if (unlikely(err))
++			goto out;
++	}
++	err = au_h_path_getattr(dentry, /*force*/1, &h_path, reenter);
+ 	if (unlikely(err))
+ 		goto out_si;
+ 	if (unlikely(!h_path.dentry))
+@@ -229,9 +246,11 @@ static ssize_t au_lgxattr(struct dentry
+ 	}
+ 
+ out_di:
+-	di_read_unlock(dentry, AuLock_IR);
++	if (!reenter)
++		di_read_unlock(dentry, AuLock_IR);
+ out_si:
+-	si_read_unlock(sb);
++	if (!reenter)
++		si_read_unlock(sb);
+ out:
+ 	AuTraceErr(err);
+ 	return err;
