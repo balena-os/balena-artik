@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add entry for the disabling of random MAC address generation when scanning for a WiFi connection [Florin]
 * Add backported patch for making aufs work on the smack enabled kernel of artik5 and artik10 [Florin]
 
 # v2.0.0-beta11.rev1 - 2017-02-15
