@@ -21,7 +21,7 @@ RESIN_BOOT_PARTITION_FILES_append_artik5 = " \
 
 IMAGE_CMD_resinos-img_append_artik5 () {
     # artik5 needs u-boot env data bin written at a specific location for both SD card and eMMC boot
-    dd if=${DEPLOY_DIR_IMAGE}/${UBOOT_ENV_BIN} of=${RESIN_SDIMG} conv=notrunc bs=512 seek=1031
+    dd if=${DEPLOY_DIR_IMAGE}/${UBOOT_ENV_BIN} of=${RESIN_RAW_IMG} conv=notrunc bs=512 seek=1031
 }
 
 #
@@ -35,5 +35,5 @@ RESIN_BOOT_PARTITION_FILES_append_artik10 = " \
 
 IMAGE_CMD_resinos-img_append_artik10 () {
     # artik10 needs u-boot env data bin written at a specific location for both SD card and eMMC boot
-    dd if=${DEPLOY_DIR_IMAGE}/${UBOOT_ENV_BIN} of=${RESIN_SDIMG} conv=notrunc bs=512 seek=1231
+    dd if=${DEPLOY_DIR_IMAGE}/${UBOOT_ENV_BIN} of=${RESIN_RAW_IMG} conv=notrunc bs=512 seek=1231
 }

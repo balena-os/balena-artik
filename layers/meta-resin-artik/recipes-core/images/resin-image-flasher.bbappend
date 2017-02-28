@@ -17,8 +17,8 @@ IMAGE_CMD_resinos-img_append () {
     # Artik 5 and Artik 10 need bl1 (signed prebuilt binary), bl2 (espresso3250-spl.bin but at the moment the prebuilt bl2.bin is used
     # because the one compiled from u-boot has stability issues as per Samsung), u-boot.bin and tzsw.bin (TrustZone software)
     # written at specific locations for booting off the SD card.
-    dd if=${DEPLOY_DIR_IMAGE}/bl1.bin of=${RESIN_SDIMG} conv=notrunc bs=512 seek=1
-    dd if=${DEPLOY_DIR_IMAGE}/bl2.bin of=${RESIN_SDIMG} conv=notrunc bs=512 seek=31
-    dd if=${DEPLOY_DIR_IMAGE}/u-boot-${MACHINE}.bin of=${RESIN_SDIMG} conv=notrunc bs=512 seek=63
-    dd if=${DEPLOY_DIR_IMAGE}/tzsw.bin of=${RESIN_SDIMG} conv=notrunc bs=512 seek=719
+    dd if=${DEPLOY_DIR_IMAGE}/bl1.bin of=${RESIN_RAW_IMG} conv=notrunc bs=512 seek=1
+    dd if=${DEPLOY_DIR_IMAGE}/bl2.bin of=${RESIN_RAW_IMG} conv=notrunc bs=512 seek=31
+    dd if=${DEPLOY_DIR_IMAGE}/u-boot-${MACHINE}.bin of=${RESIN_RAW_IMG} conv=notrunc bs=512 seek=63
+    dd if=${DEPLOY_DIR_IMAGE}/tzsw.bin of=${RESIN_RAW_IMG} conv=notrunc bs=512 seek=719
 }
