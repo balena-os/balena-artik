@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Implement resin-uboot specification 2.0 for artik5 and artik10 [Florin]
+
 # v2.0.0-beta12.rev1 - 2017-02-27
 
 * Bump resin-yocto-scripts to current HEAD [Andrei]

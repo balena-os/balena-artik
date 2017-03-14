@@ -10,9 +10,6 @@ RESIN_BOOT_PARTITION_FILES_append = " \
     tzsw.bin:/tzsw.bin \
 "
 
-# custom uboot binary env data for SD card boot
-UBOOT_ENV_BIN = "params_sd.bin"
-
 IMAGE_CMD_resinos-img_append () {
     # Artik 5 and Artik 10 need bl1 (signed prebuilt binary), bl2 (espresso3250-spl.bin but at the moment the prebuilt bl2.bin is used
     # because the one compiled from u-boot has stability issues as per Samsung), u-boot.bin and tzsw.bin (TrustZone software)
