@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update meta-resin submodule to version v2.0.0-rc3 [Florin]
 * Implement resin-uboot specification 2.0 for artik5 and artik10 [Florin]
 
 # v2.0.0-beta12.rev1 - 2017-02-27
