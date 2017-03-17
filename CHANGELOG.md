@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.0.0-rc4.rev1 - 2017-03-17
+
+* Update the meta-resin submodule to version v2.0.0-rc4 [Florin]
 * Use the kernel with the bundled initramfs [Florin]
 * Update meta-resin submodule to version v2.0.0-rc3 [Florin]
 * Implement resin-uboot specification 2.0 for artik5 and artik10 [Florin]
