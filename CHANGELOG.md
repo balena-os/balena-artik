@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update resin-yocto-scripts [Will]
+
 # v2.0.0+rev1 - 2017-04-03
 
 * Fix OS version to be semver compliant [Andrei]
