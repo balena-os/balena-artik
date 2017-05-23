@@ -1,6 +1,6 @@
 FILESEXTRAPATHS_append := ":${THISDIR}/files"
 
-# add custom systemd drop-in file (brcm-bt-firmware.conf) to accomodate changes from fwdown_adapt_to_resin.patch (we need to wait for the resin-conf partition to be mounted)
+# add custom systemd drop-in file (brcm-bt-firmware.conf) to accomodate changes from fwdown_adapt_to_resin.patch (we need to wait for the resin-state partition to be mounted)
 SRC_URI += " \
     file://brcm-bt-firmware.conf \
     file://fwdown_adapt_to_resin.patch \
