@@ -1,5 +1,5 @@
 This patch moves the bluetooth mac address file into the
-resin-conf partition (needed for not clashing with resinhup).
+resin-state partition (needed for not clashing with resinhup).
 
 Upstream-Status: Inappropriate [configuration specific]
 Signed-off-by: Florin Sarbu <florin@resin.io>
@@ -13,14 +13,14 @@ Index: 1.0-r0/fwdown.sh
  
  function gen_bd_addr {
 -	[ -d /opt/.bd_addr ] || rm -f /opt/.bd_addr
-+	mkdir -p /mnt/conf/opt
-+	[ -d /mnt/conf/opt/.bd_addr ] || rm -f /mnt/conf/opt/.bd_addr
++	mkdir -p /mnt/state/opt
++	[ -d /mnt/state/opt/.bd_addr ] || rm -f /mnt/state/opt/.bd_addr
  
  	macaddr=$(dd if=/dev/urandom bs=1024 count=1 2>/dev/null|md5sum|sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/00:\1:\2:\3:\4:\5/')
 -	echo $macaddr > /opt/.bd_addr
 -	chmod 400 /opt/.bd_addr
-+	echo $macaddr > /mnt/conf/opt/.bd_addr
-+	chmod 400 /mnt/conf/opt/.bd_addr
++	echo $macaddr > /mnt/state/opt/.bd_addr
++	chmod 400 /mnt/state/opt/.bd_addr
  	sync
  }
  
@@ -29,16 +29,16 @@ Index: 1.0-r0/fwdown.sh
  
  if [ "$BD_ADDR" == "" ]; then
 -	if [ ! -f "/opt/.bd_addr" ]; then
-+	if [ ! -f "/mnt/conf/opt/.bd_addr" ]; then
++	if [ ! -f "/mnt/state/opt/.bd_addr" ]; then
  		gen_bd_addr ${ARTIK_DEV}
  	fi
  
 -	BD_ADDR=`cat /opt/.bd_addr`
-+	BD_ADDR=`cat /mnt/conf/opt/.bd_addr`
++	BD_ADDR=`cat /mnt/state/opt/.bd_addr`
  	if [ "$BD_ADDR" == "" ]; then
  		gen_bd_addr ${ARTIK_DEV}
 -		BD_ADDR=`cat /opt/.bd_addr`
-+		BD_ADDR=`cat /mnt/conf/opt/.bd_addr`
++		BD_ADDR=`cat /mnt/state/opt/.bd_addr`
  	fi
  fi
  
