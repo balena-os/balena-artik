@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v2.0.4+rev2 - 2017-05-23
+
 * Fix old references in the bcm4354-bt recipe to conf partition which now is called state partition [Florin]
 * Update the resin-yocto-scripts submodule [Florin]
 * Update resin-yocto-scripts to master [Will]
