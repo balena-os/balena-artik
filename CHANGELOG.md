@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add kitra520.coffee file [Florin]
 * Update meta-artik submodule to HEAD of jethro branch, needed for kitra520 support [Florin]
 
 # v2.0.4+rev2 - 2017-05-23
