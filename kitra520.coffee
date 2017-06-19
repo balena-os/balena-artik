@@ -3,8 +3,8 @@ deviceTypesCommon = require '@resin.io/device-types/common'
 
 BOARD_SHUTDOWN_ARTIK = 'The device has performed a shutdown. Press the power switch PWR SW to the off position.'
 SET_JUMPER_SD = 'Set SW2 dip switch to position 1:on, 2:on.  Also, make sure jumpers J20 and J33 are set towards the edge of the board.'
-SET_JUMPER_EMMC = 'Set SW2 dip switch to position 1:off, 2:off.'
-BOARD_POWERON_ARTIK = 'Press the power switch PWR SW to the on position. Press and hold for 1 second the SW3 POWER push button.'
+SET_JUMPER_EMMC = 'Remove the Artik520 module from the evaluation carrier and plug it on the Kitra520 carrier.'
+BOARD_POWERON_ARTIK = 'Press and hold the power button PB1 - PB2 until you hear a double buzz sound.'
 
 postProvisioningInstructions = [
 	BOARD_SHUTDOWN_ARTIK
