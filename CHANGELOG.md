@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add kitra520 icon file [Florin]
 * Modify kitra520.coffee instructions for booting off the provisioned eMMC [Carlo]
 
 # v2.0.4+rev3 - 2017-05-26
