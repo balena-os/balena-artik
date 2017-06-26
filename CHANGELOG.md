@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update to Yocto Morty [Florin]
 * Add kitra520 icon file [Florin]
 * Modify kitra520.coffee instructions for booting off the provisioned eMMC [Carlo]
 
