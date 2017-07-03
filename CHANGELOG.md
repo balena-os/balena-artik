@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the meta-artik submodule to HEAD of morty branch [Florin]
 * Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Update to Yocto Morty [Florin]
 * Add kitra520 icon file [Florin]
