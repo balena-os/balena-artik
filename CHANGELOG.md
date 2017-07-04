@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.0.8+rev1 - 2017-07-04
+
+* Update the meta-resin submodule to version v2.0.8 [Florin]
+* Update the meta-artik submodule to HEAD of morty branch [Florin]
+* Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Update to Yocto Morty [Florin]
 * Add kitra520 icon file [Florin]
 * Modify kitra520.coffee instructions for booting off the provisioned eMMC [Carlo]
