@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update the resin-yocto-scripts submodule to HEAD of master [Florin]
+
 # v2.0.8+rev2 - 2017-07-07
 
 * Update the meta-artik submodule to HEAD of morty branch [Florin]
