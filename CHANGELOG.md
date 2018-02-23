@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.9.7+rev1
+## (2018-02-23)
+
+* Update the meta-resin submodule to version v2.9.7 [Florin]
 * Update the resin-yocto-scripts submodule to e84d6e75d952c8c46e2c7d594d505dbecef5d82f (on master branch) [Florin]
 * Update submodules to pyro branches [Florin]
 * Update meta-openembedded to latest morty branch [Will]
