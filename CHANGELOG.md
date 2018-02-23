@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update submodules to pyro branches [Florin]
 * Update meta-openembedded to latest morty branch [Will]
 * Update poky to latest morty branch [Will]
 
