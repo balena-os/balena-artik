@@ -1,5 +1,5 @@
 # Supported machines
-#MACHINE ?= "artik5"
+#MACHINE ?= "artik520"
 #MACHINE ?= "artik10"
 
 # More info meta-resin/README.md

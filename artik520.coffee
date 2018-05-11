@@ -16,8 +16,8 @@ postProvisioningInstructions = [
 module.exports =
 	version: 1
 	slug: 'artik5'
-	aliases: [ 'artik5' ]
-	name: 'Samsung Artik 5'
+	aliases: [ 'artik5 artik520' ]
+	name: 'Samsung Artik 520'
 	arch: 'armv7hf'
 	state: 'released'
 
@@ -40,11 +40,11 @@ module.exports =
 	supportsBlink: false
 
 	yocto:
-		machine: 'artik5'
+		machine: 'artik520'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
 		version: 'yocto-pyro'
-		deployArtifact: 'resin-image-flasher-artik5.resinos-img'
+		deployArtifact: 'resin-image-flasher-artik520.resinos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]

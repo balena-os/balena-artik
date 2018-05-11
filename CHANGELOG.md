@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Rename artik5 instances to artik520 [Florin]
+
 # v2.12.6+rev1
 ## (2018-05-11)
 
