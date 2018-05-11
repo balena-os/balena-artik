@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Fix boot problem with bigger kernel overlapping memory area where device tree is loaded [Florin]
+
 # v2.9.7+rev1
 ## (2018-02-23)
 

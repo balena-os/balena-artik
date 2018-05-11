@@ -1,7 +1,34 @@
-Index: git/include/configs/artik_common.h
-===================================================================
---- git.orig/include/configs/artik_common.h
-+++ git/include/configs/artik_common.h
+From b4c1cc7e4d32c6aaa2d2466b3833318d6ef647ba Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@resin.io>
+Date: Wed, 9 May 2018 14:19:58 +0200
+Subject: [PATCH] artik_common.h: Rework the machine specific integration of
+ the resin-u-boot environment configuration
+
+Because the kernel with the bundled initramfs has grown in size, we need to allow
+for some space between the addresses where the kernel and device tree are loaded
+in u-boot so they do not overlap. Without this increase, the kernel will silently
+fail to boot. We choose to increase the address where the device tree gets loaded.
+
+Upstream-Status: Inappropriate [configuration]
+
+Signed-off-by: Florin Sarbu <florin@resin.io>
+---
+ include/configs/artik_common.h | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+diff --git a/include/configs/artik_common.h b/include/configs/artik_common.h
+index 9aeb14c..77b52f8 100644
+--- a/include/configs/artik_common.h
++++ b/include/configs/artik_common.h
+@@ -289,7 +289,7 @@
+ 	"fdtfile=" CONFIG_FDT_FILE "\0"					\
+ 	"kernel_file=zImage\0"						\
+ 	"kernel_addr=40008000\0"					\
+-	"fdtaddr=40800000\0"						\
++	"fdtaddr=44800000\0"						\
+ 	"initrd_file=uInitrd\0"						\
+ 	"initrd_addr=43000000\0"					\
+ 	"sdrecovery=sdfuse format; sdfuse flashall 3\0"			\
 @@ -298,8 +298,8 @@
  	"factory_set_ethaddr=run factory_load; gen_eth_addr ;"		\
  		"factory_info write ethaddr $ethaddr;"			\
@@ -34,3 +61,6 @@ Index: git/include/configs/artik_common.h
 +		"run mmcboot\0"
  
  #endif /* __ARTIK_COMMON_H */
+-- 
+2.7.4
+
