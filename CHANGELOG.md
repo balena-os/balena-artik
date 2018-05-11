@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.12.6+rev1
+## (2018-05-11)
+
+* Update the meta-resin submodule to version v2.12.6 [Florin]
 * Update the resin-yocto-scripts submodule to f7718efbbf53369aaacb7eb54e707ee8a5d4fc4b (on master branch) [Florin]
 * Fix boot problem with bigger kernel overlapping memory area where device tree is loaded [Florin]
 
