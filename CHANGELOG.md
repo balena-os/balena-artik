@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the meta-artik BSP submodule to 1b0365cc3f1d9b736a4ccb0da5ca363be20fb129 (on pyro branch) [Florin]
 * Rename artik5 instances to artik520 [Florin]
 
 # v2.12.6+rev1
