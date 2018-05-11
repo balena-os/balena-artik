@@ -5,7 +5,7 @@
 IMAGE_FSTYPES_append = " resinos-img"
 
 # Customize resinos-img
-RESIN_IMAGE_BOOTLOADER = "u-boot-artik"
+RESIN_IMAGE_BOOTLOADER = "virtual/u-boot-artik"
 RESIN_BOOT_PARTITION_FILES_append = " \
     zImage${KERNEL_INITRAMFS}-${MACHINE}.bin:/zImage \
 "
