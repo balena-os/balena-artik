@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the resin-yocto-scripts submodule to f7718efbbf53369aaacb7eb54e707ee8a5d4fc4b (on master branch) [Florin]
 * Fix boot problem with bigger kernel overlapping memory area where device tree is loaded [Florin]
 
 # v2.9.7+rev1
