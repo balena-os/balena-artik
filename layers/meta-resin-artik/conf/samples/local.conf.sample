@@ -1,6 +1,11 @@
 # Supported machines
 #MACHINE ?= "artik520"
+#MACHINE ?= "artik530"
+#MACHINE ?= "artik533s"
 #MACHINE ?= "artik10"
+
+BALENA_STORAGE_artik530 = "overlay2"
+BALENA_STORAGE_artik533s = "overlay2"
 
 # More info meta-resin/README.md
 #RESIN_CONNECTABLE ?= "1"
