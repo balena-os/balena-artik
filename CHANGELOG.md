@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the meta-artik BSP submodule to dfabe91bbae26f628ab950445f7e9a37dce49b1f (on pyro branch) [Florin]
 * Adapt repository to changes done for adopting the new artik520 machine in the BSP layer [Florin]
 * Update the meta-artik BSP submodule to 1b0365cc3f1d9b736a4ccb0da5ca363be20fb129 (on pyro branch) [Florin]
 * Rename artik5 instances to artik520 [Florin]
