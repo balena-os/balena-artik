@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.12.7+rev1
+## (2018-05-30)
+
+* Update the meta-resin submodule to version v2.12.7 [Florin]
 * Add hostapp update hooks for boot firmware for artik530 and artik533s [Florin]
 * Add support for artik530 and artik533s [Florin]
 * Update the meta-artik BSP submodule to dfabe91bbae26f628ab950445f7e9a37dce49b1f (on pyro branch) [Florin]
