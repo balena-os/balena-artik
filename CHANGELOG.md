@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add hostapp update hooks for boot firmware for artik530 and artik533s [Florin]
 * Add support for artik530 and artik533s [Florin]
 * Update the meta-artik BSP submodule to dfabe91bbae26f628ab950445f7e9a37dce49b1f (on pyro branch) [Florin]
 * Adapt repository to changes done for adopting the new artik520 machine in the BSP layer [Florin]
