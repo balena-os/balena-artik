@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Make NetworkManager not manage p2p interfaces [Florin]
+
 # v2.12.7+rev1
 ## (2018-05-30)
 
