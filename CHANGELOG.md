@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the meta-artik BSP submodule to ab8ba81a0673a110f7032ba13af715d763df9a33 (on pyro branch) [Florin]
 * Make NetworkManager not manage p2p interfaces [Florin]
 
 # v2.12.7+rev1
