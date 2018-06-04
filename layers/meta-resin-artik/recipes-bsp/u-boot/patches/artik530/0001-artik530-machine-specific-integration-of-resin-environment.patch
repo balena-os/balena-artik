@@ -1,6 +1,6 @@
-From 5e6c7591e89c832be4558017c35491521392ce6e Mon Sep 17 00:00:00 2001
+From b209a02488c8dff8c3d8b89a01ddaceb1504e451 Mon Sep 17 00:00:00 2001
 From: Florin Sarbu <florin@resin.io>
-Date: Mon, 28 May 2018 15:41:30 +0200
+Date: Mon, 4 Jun 2018 07:38:44 +0200
 Subject: [PATCH] artik530 machine specific integration of resin environment
  configuration
 
@@ -8,11 +8,11 @@ Upstream-Status: Inappropriate [configuration]
 
 Signed-off-by: Florin Sarbu <florin@resin.io>
 ---
- include/configs/artik530_raptor.h | 27 +++++++++++++++++----------
- 1 file changed, 17 insertions(+), 10 deletions(-)
+ include/configs/artik530_raptor.h | 26 +++++++++++++++++---------
+ 1 file changed, 17 insertions(+), 9 deletions(-)
 
 diff --git a/include/configs/artik530_raptor.h b/include/configs/artik530_raptor.h
-index 65ede91..8cc2fdb 100644
+index 65ede91..67674fe 100644
 --- a/include/configs/artik530_raptor.h
 +++ b/include/configs/artik530_raptor.h
 @@ -234,6 +234,7 @@
@@ -43,14 +43,11 @@ index 65ede91..8cc2fdb 100644
  		"fi; setenv success; setenv number; setenv loop;\0"	\
  	"bootdelay=" __stringify(CONFIG_BOOTDELAY) "\0"			\
  	"console=" CONFIG_DEFAULT_CONSOLE				\
-@@ -441,21 +442,22 @@
- 	"factory_set_ethaddr=run factory_load; gen_eth_addr ;"		\
+@@ -442,20 +443,20 @@
  		"factory_info write ethaddr $ethaddr;"			\
  		"run factory_save\0"					\
--	"load_args=run factory_load; setenv bootargs ${console} "	\
+ 	"load_args=run factory_load; setenv bootargs ${console} "	\
 -		"root=/dev/mmcblk${rootdev}p${rootpart} ${root_rw} "	\
-+	"load_args=run resin_set_kernel_root; "				\
-+		"run factory_load; setenv bootargs ${console} "		\
 +		"${resin_kernel_root} ${root_rw} "			\
  		"rootfstype=${rootfs_type} ${recoverymode} ${ota} "	\
  		"drm_panel=$lcd_panel nr_cpus=${nr_cpus} ${opts} "	\
@@ -70,13 +67,15 @@ index 65ede91..8cc2fdb 100644
  			"run load_args; "				\
  		"fi;\0"							\
  	"load_initrd=ext4load mmc ${rootdev}:${bootpart} $ramdiskaddr $ramdisk_file\0" \
-@@ -470,7 +472,12 @@
+@@ -470,7 +471,14 @@
  		"setenv modulespart " __stringify(CONFIG_MODULES_PART_SD)"; "	\
  		"setenv rootpart " __stringify(CONFIG_ROOT_PART_SD)";\0"	\
  	"ramfsboot=run gen_addr; run load_args; run boot_cmd_initrd\0"	\
 -	"mmcboot=run gen_addr; run load_args; run boot_cmd_mmcboot\0"	\
 +	"mmcboot="							\
-+		"run gen_addr; setenv resin_kernel_load_addr ${kerneladdr}; "	\
++		"run gen_addr;"						\
++		"setenv resin_kernel_load_addr ${kerneladdr};"		\
++		"run resin_set_kernel_root;"				\
 +		"setenv rootdev ${resin_dev_index};"			\
 +		"setenv rootpart ${resin_root_part};"			\
 +		"setenv bootpart ${resin_boot_part};"			\
@@ -84,7 +83,7 @@ index 65ede91..8cc2fdb 100644
  	"recovery_cmd=run sdrecovery; setenv recoverymode recovery\0"	\
  	"recoveryboot=run gen_sdrecaddr; run recovery_cmd; run ramfsboot\0"		\
  	"hwtestboot=setenv rootdev 1;"					\
-@@ -478,6 +485,6 @@
+@@ -478,6 +486,6 @@
  		"setenv fdtfile s5p4418-artik${model_id}-explorer.dtb;"		\
  		"run mmcboot\0"						\
  	"hwtest_recoveryboot=run recovery_cmd; run hwtestboot\0"        \
