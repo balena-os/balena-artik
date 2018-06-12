@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update the meta-artik BSP submodule to a31855adef7ff383e9bb9ab98536853e3cfff2a8 (on pyro branch) [Florin]
+
 # v2.12.7+rev2
 ## (2018-06-04)
 
