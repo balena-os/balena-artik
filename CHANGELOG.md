@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.14.3+rev3
+## (2018-08-29)
+
+* Update BSP on pyro to include Samsung release 18.05.00 [Florin Sarbu]
+
 # v2.14.3+rev2
 ## (2018-08-27)
 
