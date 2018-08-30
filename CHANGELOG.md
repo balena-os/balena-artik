@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.14.3+rev4
+## (2018-08-30)
+
+* Update BSP on pyro to include kernel version fix on artik530 [Florin Sarbu]
+
 # v2.14.3+rev3
 ## (2018-08-29)
 
