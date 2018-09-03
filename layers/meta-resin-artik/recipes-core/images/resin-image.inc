@@ -61,3 +61,11 @@ RESIN_BOOT_PARTITION_FILES_append_artik533s = " \
 IMAGE_CMD_resinos-img_append_artik533s () {
     dd conv=notrunc if=${DEPLOY_DIR_IMAGE}/${SECUREOS} of=${RESIN_RAW_IMG} bs=512 seek=${SECUREOS_OFFSET}
 }
+
+# get the device tree overlays for artik530 and artik533s in resin-boot
+RESIN_BOOT_PARTITION_FILES_append_artik53x = " \
+    overlays/s5p4418-artik533-compy-i2c1.dtbo:/overlays/s5p4418-artik533-compy-i2c1.dtbo \
+    overlays/s5p4418-artik533-compy-sense.dtbo:/overlays/s5p4418-artik533-compy-sense.dtbo \
+    overlays/s5p4418-artik533-compy-serial4.dtbo:/overlays/s5p4418-artik533-compy-serial4.dtbo \
+    overlays/s5p4418-artik533-compy-spi2.dtbo:/overlays/s5p4418-artik533-compy-spi2.dtbo \
+"
