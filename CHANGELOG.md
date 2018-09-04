@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2.15.1+rev2
+## (2018-09-03)
+
+* Add the device tree overlays to the boot partition [Florin Sarbu]
+* Update BSP so we can deploy the device tree overlays [Florin Sarbu]
+
 # v2.15.1+rev1
 ## (2018-08-31)
 
