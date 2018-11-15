@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fix typo in 99-flash-bootloader-artik533s
+      hash: 51fe1e248c499c2809f10ba07444f5122cf8541b
+      body: ''
+      footer:
+        Changelog-entry: Fix typo in 99-flash-bootloader-artik533s
+        changelog-entry: Fix typo in 99-flash-bootloader-artik533s
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.26.0+rev2
+  date: 2018-11-15T12:57:15.869Z
+- commits:
     - subject: Update the meta-resin submodule from v2.19.0 to v2.26.0
       hash: 4cd6c06cdfd471f530a3268f175e3b639620f4b3
       body: |
