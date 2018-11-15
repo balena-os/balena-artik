@@ -38,7 +38,7 @@ uboot_skip_blocks=0
 secureos_file="secureos.img"
 secureos_block_size=512
 # count here should be bigger than the actual file so count actually won't matter
-secureos_cound=100000000
+secureos_count=100000000
 secureos_seek_blocks=769
 secureos_skip_blocks=0
 
