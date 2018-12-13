@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+echo "Appling overlay for SPI device (spidev2.0)"
+mount -o remount,rw /
+test ! -d /sys/kernel/config/device-tree/overlays/spi2 && mkdir /sys/kernel/config/device-tree/overlays/spi2
+cd /mnt/boot/overlays
+cat s5p4418-artik533-compy-spi2.dtbo > /sys/kernel/config/device-tree/overlays/spi2/dtbo
+mount -o remount,ro /
+exit 0
