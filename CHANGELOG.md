@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.27.0+rev2
+## (2018-12-14)
+
+* Switch from resin-yocto-scripts to balena-yocto-scripts [Florin Sarbu]
+
 # v2.27.0+rev1
 ## (2018-12-04)
 
