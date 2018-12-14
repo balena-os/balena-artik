@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add spidev enabling script in resin-init-board
+      hash: d032b663837acd7cba9afc62eb93051ddf2a476e
+      body: |
+        A shell script which will enable the spidev  will be
+        called in resin-init-board for artik53x boards.
+      footer:
+        Changelog-entry: Add spidev enabling script in resin-init-board
+        changelog-entry: Add spidev enabling script in resin-init-board
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+      author: Vicentiu Galanopulo
+  version: 2.27.0+rev3
+  date: 2018-12-14T16:14:16.059Z
+- commits:
     - subject: Switch from resin-yocto-scripts to balena-yocto-scripts
       hash: 4669c4614828ab6dd791cea426f758f25d3558c5
       body: ''

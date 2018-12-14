@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.27.0+rev3
+## (2018-12-14)
+
+* Add spidev enabling script in resin-init-board [Vicentiu Galanopulo]
+
 # v2.27.0+rev2
 ## (2018-12-14)
 
