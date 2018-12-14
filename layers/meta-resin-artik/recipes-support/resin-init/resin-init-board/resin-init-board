@@ -3,7 +3,7 @@
 set -e
 
 echo "Setting USB 3.0 port to host mode"
-echo 0 > /sys/devices/usb.1/12000000.dwc3/id
+test -e /sys/devices/usb.1/12000000.dwc3/id && echo 0 > /sys/devices/usb.1/12000000.dwc3/id
 
 test -e /usb/bin/resin-530s-spidev && /usr/bin/resin-530s-spidev
 
