@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fixed typo in resin-530s-spidev path
+      hash: a5d9266607ae119b315b7e7749994246eda1e28c
+      body: ''
+      footer:
+        Changelog-entry: Fixed typo in resin-530s-spidev path
+        changelog-entry: Fixed typo in resin-530s-spidev path
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+      author: Vicentiu Galanopulo
+  version: 2.27.0+rev4
+  date: 2018-12-17T11:06:39.670Z
+- commits:
     - subject: Add spidev enabling script in resin-init-board
       hash: d032b663837acd7cba9afc62eb93051ddf2a476e
       body: |

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.27.0+rev4
+## (2018-12-17)
+
+* Fixed typo in resin-530s-spidev path [Vicentiu Galanopulo]
+
 # v2.27.0+rev3
 ## (2018-12-14)
 
