@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+echo "Appling overlay for i2c device i2c-1"
+mount -o remount,rw /
+test ! -d /sys/kernel/config/device-tree/overlays/i2c1 && mkdir /sys/kernel/config/device-tree/overlays/i2c1
+cd /mnt/boot/overlays
+cat s5p4418-artik533-compy-i2c1.dtbo > /sys/kernel/config/device-tree/overlays/i2c1/dtbo
+mount -o remount,ro /
+exit 0
