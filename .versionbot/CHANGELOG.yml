@@ -1,4 +1,19 @@
 - commits:
+    - subject: Added i2c-1 dev from overlay for 530s
+      hash: 4a0da8a26aa1431926b9744ca61f1dfa2b5606e0
+      body: |
+        Similar to the spidev, a shell script was added to enable
+        the i2c-1 device in /dev. This change is for the artik530s
+        board.
+      footer:
+        Changelog-entry: Added i2c-1 dev from overlay for 530s
+        changelog-entry: Added i2c-1 dev from overlay for 530s
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@resin.io>
+      author: Vicentiu Galanopulo
+  version: 2.27.0+rev5
+  date: 2018-12-19T13:03:55.389Z
+- commits:
     - subject: Fixed typo in resin-530s-spidev path
       hash: a5d9266607ae119b315b7e7749994246eda1e28c
       body: ''

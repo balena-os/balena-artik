@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.27.0+rev5
+## (2018-12-19)
+
+* Added i2c-1 dev from overlay for 530s [Vicentiu Galanopulo]
+
 # v2.27.0+rev4
 ## (2018-12-17)
 
