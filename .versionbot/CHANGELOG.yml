@@ -1,4 +1,16 @@
 - commits:
+    - subject: BSP update
+      hash: d5c3145939df611484f53dd2e3f080a3d561bde1
+      body: ''
+      footer:
+        Changelog-entry: BSP update
+        changelog-entry: BSP update
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.29.2+rev2
+  date: 2019-02-08T12:12:55.754Z
+- commits:
     - subject: Update the meta-resin submodule from v2.27.0 to v2.29.2
       hash: ea573ee266b21d6fba9548653f39cd660040d8fc
       body: |
