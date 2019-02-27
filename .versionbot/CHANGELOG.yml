@@ -1,5 +1,19 @@
 - commits:
     - subject: BSP update
+      hash: e9a691a432522ed8e639c6e35d3869d04399e2e0
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Changelog-entry: BSP update
+        changelog-entry: BSP update
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.29.2+rev3
+  date: 2019-02-27T16:43:16.216Z
+- commits:
+    - subject: BSP update
       hash: d5c3145939df611484f53dd2e3f080a3d561bde1
       body: ''
       footer:

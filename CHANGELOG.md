@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.29.2+rev3
+## (2019-02-27)
+
+* BSP update [Vicentiu Galanopulo]
+
 # v2.29.2+rev2
 ## (2019-02-08)
 
