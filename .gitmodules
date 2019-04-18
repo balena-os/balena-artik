@@ -12,7 +12,7 @@
 	url = https://github.com/resin-os/meta-resin.git
 [submodule "layers/poky"]
 	path = layers/poky
-	url = https://git.yoctoproject.org/git/poky
+	url = https://github.com/balena-os/poky
 [submodule "layers/meta-rust"]
 	path = layers/meta-rust
 	url = https://github.com/meta-rust/meta-rust.git
