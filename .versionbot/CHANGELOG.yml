@@ -1,4 +1,17 @@
 - commits:
+    - subject: Discontinue the artik530 board
+      hash: 9e12163316986b332d2db5860b778c1756865a93
+      body: |
+        We will no longer be offering OS updates for this board
+      footer:
+        Changelog-entry: Discontinue the artik530 board
+        changelog-entry: Discontinue the artik530 board
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.30.0+rev2
+  date: 2019-04-20T12:36:15.737Z
+- commits:
     - subject: Update the meta-resin submodule from v2.29.2 to v2.30.0
       hash: 8b08bcbaecf9ae176de52bd7e71dff5eb642284c
       body: |

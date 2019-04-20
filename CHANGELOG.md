@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.30.0+rev2
+## (2019-04-20)
+
+* Discontinue the artik530 board [Florin Sarbu]
+
 # v2.30.0+rev1
 ## (2019-03-01)
 
