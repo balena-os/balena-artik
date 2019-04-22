@@ -1,6 +1,71 @@
 Change log
 -----------
 
+# v2.32.0+rev1
+## (2019-04-22)
+
+* Update meta-balena from v2.30.0 to v2.32.0 [Florin Sarbu]
+
+<details>
+<summary> View details </summary>
+
+## meta-balena-2.32.0
+### (2019-04-08)
+
+* balena-supervisor: Update to v9.14.0 [Cameron Diver]
+* readme: Replace resin with balena where appropriate [Roman Mazur]
+* Add systemd-analyze to production images as well [Zubair Lutfullah Kakakhel]
+* Enable dbus interface for dnsmasq [Zubair Lutfullah Kakakhel]
+* Disable docker bridge while pulling the supervisor container to remove runtime balena-engine warnings [Zubair Lutfullah Kakakhel]
+* Fix typo in os-networkmanager that prevented it from working [Zubair Lutfullah Kakakhel]
+* Fix bug where fsck was run on the data partition on every boot even if it wasn't needed due to old system time. [Zubair Lutfullah Kakakhel]
+* Fix the balena version string reported by balena-engine info [Zubair Lutfullah Kakakhel]
+* Only check mmc devices for flasher image presence by default. [Zubair Lutfullah Kakakhel]
+* Remove an extra redundant copy of udev rules database [Zubair Lutfullah Kakakhel]
+* Un-upx mobynit and os-config to speed them up a bit. Approx 1 second boost to boot time. [Zubair Lutfullah Kakakhel]
+
+## meta-balena-2.31.5
+### (2019-03-21)
+
+* Update resin-supervisor to v9.11.3 [Andrei Gherzan]
+
+## meta-balena-2.31.4
+### (2019-03-20)
+
+* resin-supervisor: Recreate on start if config has changed [Rich Bayliss]
+
+## meta-balena-2.31.3
+### (2019-03-20)
+
+* Update resin-supervisor to v9.11.2 [Pablo Carranza Velez]
+
+## meta-balena-2.31.2
+### (2019-03-19)
+
+* Update resin-supervisor to v9.11.1 [Pablo Carranza Velez]
+
+## meta-balena-2.31.1
+### (2019-03-18)
+
+* Update resin-supervisor to v9.11.0 [Pablo Carranza Velez]
+
+## meta-balena-2.31.0
+### (2019-03-08)
+
+* README:md: Document dnsServers behaviour [Alexis Svinartchouk]
+* Update resin-supervisor to v9.9.0 [Cameron Diver]
+* Cleanup old versions of iwlwifi firmware files in Yocto sumo [Andrei Gherzan]
+* Remove polkit dependency in balenaOS [Andrei Gherzan]
+* Remove support for XFS file system [Andrei Gherzan]
+* resin-init: update resin.io reference to balenaOS [Matthew McGinn]
+</details>
+
+* Update the BSP layer so we now build the kernel with the RT patches [Florin Sarbu]
+* Update the balena-yocto-scripts submodule to v1.0.5 [Florin Sarbu]
+* Update repo.yml to be able to trigger VersionBot with `meta-balena` [Florin Sarbu]
+* Rename meta-resin to meta-balena in repository [Florin Sarbu]
+* Change the poky submodule to our github mirror [Florin Sarbu]
+
 # v2.30.0+rev2
 ## (2019-04-20)
 
