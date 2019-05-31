@@ -1,0 +1,65 @@
+From 23c5f0de7954fd44d774aad0544c42320bb95c50 Mon Sep 17 00:00:00 2001
+From: Vicentiu Galanopulo <vicentiu@balena.io>
+Date: Fri, 31 May 2019 10:58:08 +0200
+Subject: [PATCH] Load the RAPTOR variant without checking for COMPY
+
+This patch removes the part where the checking is done
+for the COMPY variant and loads directly the
+s5p4418-artik533-raptor-rev00.dtb. This was done because
+sparsley, the neurosity board booted the COMPY variant.
+
+Upstream-status: Innapropirate [configuration]
+
+Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+---
+ include/configs/artik533_raptor.h | 27 ++-------------------------
+ 1 file changed, 2 insertions(+), 25 deletions(-)
+
+diff --git a/include/configs/artik533_raptor.h b/include/configs/artik533_raptor.h
+index d8410d2..f6e496a 100644
+--- a/include/configs/artik533_raptor.h
++++ b/include/configs/artik533_raptor.h
+@@ -318,7 +318,6 @@
+ #define CONFIG_FACTORY_INFO_SIZE		0x100
+ 
+ #define CONFIG_CHECK_BOARD_TYPE
+-#define CONFIG_SUPPORT_COMPY_BOARD
+ /* OTA */
+ #if defined(CONFIG_ARTIK_OTA)
+ #define CONFIG_FLAG_INFO_ADDR	0x9A000000
+@@ -389,30 +388,8 @@
+ 	"gen_sdrecaddr="						\
+ 		"setexpr sdrecaddr $sdram_base + $sd_offset\0"	\
+ 	"initrd_high=0xFFFFFFFF\0"	\
+-	"load_fdt="							\
+-		"if test $board_type = compy; then "			\
+-			"fatload mmc $rootdev:$bootpart $fdtaddr s5p4418-artik${model_id}-compy.dtb; "	\
+-		"else "							\
+-		"if test -z \"$fdtfile\"; then "                        \
+-		"loop=$board_rev; "					\
+-		"number=$board_rev: "					\
+-		"success=0; "						\
+-		"until test $loop -eq 0 || test $success -ne 0; do "	\
+-			"if test $loop -lt 10; then "			\
+-				"number=0$loop; "			\
+-			"else number=$loop; "				\
+-			"fi; "						\
+-			"fatsize mmc $rootdev:$bootpart s5p4418-artik${model_id}-raptor-rev${number}.dtb && setexpr success 1; " \
+-			"setexpr loop $loop - 1; "			\
+-		"done; "					\
+-		"if test $success -eq 0; then "				\
+-			"fatload mmc $rootdev:$bootpart $fdtaddr s5p4418-artik533-raptor-rev00.dtb;"	\
+-		"else "							\
+-			"fatload mmc $rootdev:$bootpart $fdtaddr s5p4418-artik${model_id}-raptor-rev${number}.dtb; "	\
+-		"fi; "							\
+-		"else fatload mmc $rootdev:$bootpart $fdtaddr $fdtfile; " \
+-		"fi; setenv success; setenv number; setenv loop;"	\
+-		"fi;\0"							\
++	"load_fdt=fatload mmc $rootdev:$bootpart $fdtaddr "		\
++		"s5p4418-artik533-raptor-rev00.dtb;\0"			\
+ 	"bootdelay=" __stringify(CONFIG_BOOTDELAY) "\0"			\
+ 	"console=" CONFIG_DEFAULT_CONSOLE				\
+ 	"consoleon=setenv console=" CONFIG_DEFAULT_CONSOLE		\
+-- 
+2.7.4
+
