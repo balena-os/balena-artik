@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.35.0+rev2
+## (2019-05-31)
+
+* Force the loading the RAPTOR board variant dtb [Vicentiu Galanopulo]
+
 # v2.35.0+rev1
 ## (2019-05-19)
 

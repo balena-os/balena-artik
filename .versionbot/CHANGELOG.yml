@@ -1,4 +1,21 @@
 - commits:
+    - subject: Force the loading the RAPTOR board variant dtb
+      hash: 5ae213c05c13542b047fb0bacaf96f4668390ee6
+      body: |
+        It was noticed on the Neurosity board that, sometimes, it loads the
+        COMPY variant dtb instead of the RAPTOR variant. The issue reported
+        was that i2c devices i2c-8 and i2c-9 were now present in /dev.
+        A patch over u-boot is added to remove the checkup and loading of the
+        COMPY variant and always load the RAPTOR variant of the dtb.
+      footer:
+        Changelog-entry: Force the loading the RAPTOR board variant dtb
+        changelog-entry: Force the loading the RAPTOR board variant dtb
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.35.0+rev2
+  date: 2019-05-31T10:44:32.512Z
+- commits:
     - subject: Update meta-balena from v2.33.0 to v2.35.0
       hash: 3dd16a6cee0fe62cdf69a7ef6365c229dda289d3
       body: |
