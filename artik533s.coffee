@@ -43,7 +43,7 @@ module.exports =
 		machine: 'artik533s'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
-		version: 'yocto-pyro'
+		version: 'yocto-warrior'
 		deployArtifact: 'resin-image-flasher-artik533s.resinos-img'
 		compressed: true
 
