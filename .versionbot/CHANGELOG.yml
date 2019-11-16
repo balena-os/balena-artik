@@ -1,4 +1,17 @@
 - commits:
+    - subject: Discontinue the artik533s board
+      hash: 22b374077e9b90ffb7fd7a64c4ae3fcbfd2b7236
+      body: |
+        We will no longer be offering OS updates for this board
+      footer:
+        Changelog-entry: Discontinue the artik533s board
+        changelog-entry: Discontinue the artik533s board
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.44.0+rev3
+  date: 2019-11-15T16:13:15.559Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.4.0
       hash: 187c023a0efa912c8ff025a7884905f3ea52ab15
       body: ''
