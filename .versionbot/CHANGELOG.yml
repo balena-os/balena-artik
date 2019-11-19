@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update balena-yocto-scripts to v1.5.2
+      hash: 40d5a38b06dcec373f593c7753ba863dda946141
+      body: ''
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to v1.5.2
+        changelog-entry: Update balena-yocto-scripts to v1.5.2
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.44.0+rev4
+  date: 2019-11-19T09:07:05.283Z
+- commits:
     - subject: Discontinue the artik533s board
       hash: 22b374077e9b90ffb7fd7a64c4ae3fcbfd2b7236
       body: |
