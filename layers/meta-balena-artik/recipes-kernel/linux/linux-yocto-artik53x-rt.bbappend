@@ -7,4 +7,5 @@ SRC_URI_append = " \
 	file://0004-NFLX-2019-001-SACK-Slowness.patch \
 	file://0005-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
 	file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
+	file://0007-enable_nexell_nx-rtc.patch \
 "

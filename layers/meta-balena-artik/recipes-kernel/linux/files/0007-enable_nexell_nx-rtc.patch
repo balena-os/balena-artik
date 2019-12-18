@@ -1,0 +1,32 @@
+From 295571796a08610f878ef882203aff81f89c7e4c Mon Sep 17 00:00:00 2001
+From: Vicentiu Galanopulo <vicentiu@balena.io>
+Date: Wed, 18 Dec 2019 16:42:26 +0100
+Subject: [PATCH] Enable SoC real time clock (nexell)
+
+The internal SoC real time clock needs to be enabled
+to support Balena services.
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+---
+ arch/arm/boot/dts/s5p4418-artik530-raptor-common.dtsi | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/boot/dts/s5p4418-artik530-raptor-common.dtsi b/arch/arm/boot/dts/s5p4418-artik530-raptor-common.dtsi
+index 9854bc5..f9f51be 100644
+--- a/arch/arm/boot/dts/s5p4418-artik530-raptor-common.dtsi
++++ b/arch/arm/boot/dts/s5p4418-artik530-raptor-common.dtsi
+@@ -122,6 +122,10 @@
+ 			status = "okay";
+ 		};
+ 
++		rtc@c0010c00 {
++			status = "okay";
++		};
++
+ 		nexell_usbphy: nexell-usbphy@c0012000 {
+ 			status = "okay";
+ 		};
+-- 
+2.7.4
+
