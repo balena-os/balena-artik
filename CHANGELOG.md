@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.44.0+rev5
+## (2019-12-18)
+
+* Enable the SoC RTC for the 530s variant [Vicentiu Galanopulo]
+
 # v2.44.0+rev4
 ## (2019-11-19)
 

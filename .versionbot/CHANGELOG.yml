@@ -1,4 +1,18 @@
 - commits:
+    - subject: Enable the SoC RTC for the 530s variant
+      hash: 706efcb2523e3cc07c15bdfb035291c467501e1d
+      body: |
+        Enable RTC to support Balena services which depend on
+        the clock provided by the system
+      footer:
+        Changelog-entry: Enable the SoC RTC for the 530s variant
+        changelog-entry: Enable the SoC RTC for the 530s variant
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.44.0+rev5
+  date: 2019-12-18T16:26:55.302Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.5.2
       hash: 40d5a38b06dcec373f593c7753ba863dda946141
       body: ''
