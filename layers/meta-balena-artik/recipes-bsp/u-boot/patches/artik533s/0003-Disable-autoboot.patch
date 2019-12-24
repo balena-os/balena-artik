@@ -1,0 +1,31 @@
+From dc3adde937abeda870d209dc272e799e4d59d65f Mon Sep 17 00:00:00 2001
+From: Vicentiu Galanopulo <vicentiu@balena.io>
+Date: Tue, 24 Dec 2019 11:56:43 +0100
+Subject: [PATCH] Set bootdelay to zero
+
+Customer request to disable keyboard interrupt and
+drop to command line over UART.
+This is applicable only to production images
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+---
+ include/configs/artik533_raptor.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/artik533_raptor.h b/include/configs/artik533_raptor.h
+index f6e496a..d36ccd7 100644
+--- a/include/configs/artik533_raptor.h
++++ b/include/configs/artik533_raptor.h
+@@ -108,7 +108,7 @@
+  *	U-Boot Environments
+  */
+ /* refer to common/env_common.c	*/
+-#define CONFIG_BOOTDELAY			3
++#define CONFIG_BOOTDELAY			0
+ 
+ /*-----------------------------------------------------------------------
+  * Miscellaneous configurable options
+-- 
+2.7.4
+
