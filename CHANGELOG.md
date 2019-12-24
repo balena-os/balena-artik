@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.44.0+rev6
+## (2019-12-24)
+
+* Set autoboot with no delay, with no check for abort [Vicentiu Galanopulo]
+
 # v2.44.0+rev5
 ## (2019-12-18)
 

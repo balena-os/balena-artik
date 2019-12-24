@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'Set autoboot with no delay, with no check for abort'
+      hash: 8de5a9c119ae8978b917b28ca02817003906958f
+      body: |
+        Customer request to disable autoboot stopping by pressing any
+        key combinations when connected over UART.
+        This is applicable only to production images
+      footer:
+        Changelog-entry: 'Set autoboot with no delay, with no check for abort'
+        changelog-entry: 'Set autoboot with no delay, with no check for abort'
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.44.0+rev6
+  date: 2019-12-24T11:58:19.515Z
+- commits:
     - subject: Enable the SoC RTC for the 530s variant
       hash: 706efcb2523e3cc07c15bdfb035291c467501e1d
       body: |
