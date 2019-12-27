@@ -6,6 +6,6 @@ do_install_append() {
 wifi.scan-rand-mac-address=no
 
 [keyfile]
-unmanaged-devices=interface-name:p2p*
+unmanaged-devices=interface-name:p2p*;interface-name:eth*
 EOF
 }
