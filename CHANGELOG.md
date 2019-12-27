@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.44.0+rev7
+## (2019-12-27)
+
+* Remove NetworkManger management for ethernet interfaces [Vicentiu Galanopulo]
+
 # v2.44.0+rev6
 ## (2019-12-24)
 

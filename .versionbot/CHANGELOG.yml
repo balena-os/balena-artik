@@ -1,4 +1,21 @@
 - commits:
+    - subject: Remove NetworkManger management for ethernet interfaces
+      hash: c521dc55a4ca6050e1fa57507f3dc3e66a6e632e
+      body: |
+        The ethernet interface does not exist on the customer
+        board but it is enumerated in the device tree.
+        This results in a flood of dmesg errors from the networking stack
+        [ 1363.113000] stmmac_hw_setup DMA engine initialization failed
+        [ 1363.119000] stmmac_open Hw setup failed
+      footer:
+        Changelog-entry: Remove NetworkManger management for ethernet interfaces
+        changelog-entry: Remove NetworkManger management for ethernet interfaces
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.44.0+rev7
+  date: 2019-12-27T08:15:56.376Z
+- commits:
     - subject: 'Set autoboot with no delay, with no check for abort'
       hash: 8de5a9c119ae8978b917b28ca02817003906958f
       body: |
