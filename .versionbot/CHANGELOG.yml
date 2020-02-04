@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update meta-rust to include 1.36
+      hash: 8f2ace3805a5e46e30e5bba18ded8592a5a02aa1
+      body: ''
+      footer:
+        Changelog-entry: Update meta-rust to include 1.36
+        changelog-entry: Update meta-rust to include 1.36
+        Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+      author: Zubair Lutfullah Kakakhel
+  version: 2.44.0+rev8
+  date: 2020-02-04T14:41:44.687Z
+- commits:
     - subject: Remove NetworkManger management for ethernet interfaces
       hash: c521dc55a4ca6050e1fa57507f3dc3e66a6e632e
       body: |
