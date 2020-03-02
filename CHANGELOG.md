@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.44.0+rev8
+## (2020-03-02)
+
+* Discontinue the artik533s board [Florin Sarbu]
+
 # v2.44.0+rev7
 ## (2019-12-27)
 

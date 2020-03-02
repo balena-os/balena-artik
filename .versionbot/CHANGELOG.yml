@@ -1,4 +1,17 @@
 - commits:
+    - subject: Discontinue the artik533s board
+      hash: 1adf19d618e55b6febbb479d514e80349031ff68
+      body: |
+        We will no longer be offering OS updates for this board
+      footer:
+        Changelog-entry: Discontinue the artik533s board
+        changelog-entry: Discontinue the artik533s board
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.44.0+rev8
+  date: 2020-03-02T10:30:13.969Z
+- commits:
     - subject: Remove NetworkManger management for ethernet interfaces
       hash: c521dc55a4ca6050e1fa57507f3dc3e66a6e632e
       body: |
